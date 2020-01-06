@@ -8,7 +8,7 @@
                     <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">ゲスト</a>
                     <ul class="dropdown-menu dropdown-menu-right">
                         <li class="dropdown-item"><a href="#">ログイン</a></li>
-                        <li class="dropdown-item"><a href="#">アカウント登録</a></li>
+                        <li class="dropdown-item">{!! link_to_route('signup.get', 'アカウント登録', [], ['class' => '']) !!}</li>
                     </ul>
                 </div>
             </div>
