@@ -1,0 +1,30 @@
+.profile {
+    text-align: center;
+}
+
+.show-icon {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin: 10px auto;
+}
+
+.show-icon img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+}
+
+.no-icon {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background-color: gray;    /* 仮 */
+    color: white;    /* 仮 */
+    line-height: 150px;
+    margin: 10px auto;
+}
+
+.show-name {
+    font-size: 30px;
+}
