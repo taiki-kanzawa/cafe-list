@@ -11,9 +11,10 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// トップページ
+Route::get('/', 'CafesController@index')->name('cafes.index');
+// カフェの詳細
+Route::get('cafe/{id}', 'CafesController@show')->name('cafes.show');
 
 // ユーザ登録
 Route::get('signup', 'Auth\RegisterController@showRegistrationForm')->name('signup.get');
@@ -27,4 +28,5 @@ Route::get('logout', 'Auth\LoginController@logout')->name('logout.get');
 // ユーザ機能
 Route::group(['middleware' => ['auth']], function () {
     Route::resource('users', 'UsersController', ['only' => ['show', 'edit', 'update']]);
+    Route::resource('cafes', 'CafesController', ['only' => ['create', 'store', 'edit', 'update']]);
 });

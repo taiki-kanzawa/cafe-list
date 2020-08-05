@@ -24,7 +24,7 @@ class UsersRequest extends FormRequest
     public function rules()
     {
         return [
-            'icon' => 'nullable|image|mimes:jpeg,png,jpg,svg|max:2048',    // バリデーション（作りかけ）//
+            'icon' => 'nullable|image|mimes:jpeg,png,jpg,svg|max:5000',
             'name' => 'required|max:35',
             'content' => 'nullable|max:191',
         ];
@@ -35,7 +35,7 @@ class UsersRequest extends FormRequest
         return [
             'icon.image' => '画像ファイルを選択してください。',
             'icon.mimes' => '画像ファイルの拡張子の内、jpeg,png,jpg,svgのいずれかを選択してください。',
-            'icon.max' => '画像ファイルは、2048KB以下のファイルを選択してください。',
+            'icon.max' => '画像ファイルは、5000KB以下のファイルを選択してください。',
             'name.required' => 'ユーザー名は必須項目です。',
             'name.max' => 'ユーザー名を35文字以内で入力してください。',
             'content.max' => '自己紹介欄は191文字以内で入力してください。',

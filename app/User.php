@@ -27,10 +27,8 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
     
-    /**
     public function cafes()
     {
         return $this->hasMany(Cafe::class);
     }
-    */
 }
