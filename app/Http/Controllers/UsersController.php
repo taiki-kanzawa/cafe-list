@@ -13,10 +13,16 @@ class UsersController extends Controller
     public function show($id)
     {
         $user = User::find($id);
+        $cafes = $user->cafes()->orderBy('created_at', 'desc')->paginate(5);
         
-        return view('users.show', [
+        $data = [
             'user' => $user,
-        ]);
+            'cafes' => $cafes,
+        ];
+        
+        $data += $this->counts($user);
+        
+        return view('users.show', $data);
     }
     
     // プロフィール編集 //
@@ -51,5 +57,21 @@ class UsersController extends Controller
         return view('users.show', [
             'user' => $user,
         ]);
+    }
+    
+    // お気に入りの取得 //
+    public function favorites($id)
+    {
+        $user = User::find($id);
+        $favorites = $user->favorites()->paginate(5);
+        
+        $data = [
+            'user' => $user,
+            'favorites' => $favorites,
+        ];
+        
+        $data += $this->counts($user);
+        
+        return view('users.favorites', $data);
     }
 }

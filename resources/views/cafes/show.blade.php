@@ -97,9 +97,8 @@
     
     <!-- ここに編集ページへのリンクを記述 -->
     
-    <!-- ここにお気に入りボタンのコードを記述 -->
-    
     <div class="text-center">
+        @include('favorite.favorite_button', ['cafe' => $cafe])
         {!! link_to_route('cafes.index', 'トップページへ戻る') !!}
     </div>
 @endsection

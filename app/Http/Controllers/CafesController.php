@@ -11,7 +11,7 @@ class CafesController extends Controller
 {
     public function index()
     {
-        $cafes = Cafe::orderBy('id', 'desc')->paginate(5);
+        $cafes = Cafe::orderBy('created_at', 'desc')->paginate(5);
         
         return view('welcome', [
             'cafes' => $cafes,

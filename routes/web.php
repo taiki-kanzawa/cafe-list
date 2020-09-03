@@ -29,4 +29,15 @@ Route::get('logout', 'Auth\LoginController@logout')->name('logout.get');
 Route::group(['middleware' => ['auth']], function () {
     Route::resource('users', 'UsersController', ['only' => ['show', 'edit', 'update']]);
     Route::resource('cafes', 'CafesController', ['only' => ['create', 'store', 'edit', 'update']]);
+    
+    // お気に入り一覧
+    Route::group(['prefix' => 'users/{id}'], function() {
+        Route::get('favorites', 'UsersController@favorites')->name('users.favorites');
+    });
+    
+    // お気に入り機能
+    Route::group(['prefix' => 'cafes/{id}'], function() {
+        Route::post('favorite', 'FavoritesController@store')->name('favorites.favorite');
+        Route::delete('unfavorite', 'FavoritesController@destroy')->name('favorites.unfavorite');
+    });
 });

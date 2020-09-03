@@ -25,7 +25,7 @@ class CafesRequest extends FormRequest
     {
         return [
             'cafe_name' => 'required',
-            'image' => 'required|image|mimes:jpeg,png,jpg,svg|max:20000',
+            'image.*' => 'required|image|mimes:jpeg,png,jpg,svg|max:20000',
             'address' => 'required',
             'wifi' => 'required',
             'electrical_outlet' => 'required',
@@ -39,10 +39,10 @@ class CafesRequest extends FormRequest
     {
         return [
             'cafe_name.required' => '店名は必須項目です。',
-            'image.required' => '画像ファイルは必須項目です。',
-            'image.image' => '画像ファイルを選択してください。',
-            'image.mimes' => '画像ファイルの拡張子の内、jpeg,png,jpg,svgのいずれかを選択してください。',
-            'image.max' => '画像ファイルは、20000KB以下のファイルを選択してください。',
+            'image.*.required' => '画像ファイルは必須項目です。',
+            'image.*.image' => '画像ファイルを選択してください。',
+            'image.*.mimes' => '画像ファイルの拡張子の内、jpeg,png,jpg,svgのいずれかを選択してください。',
+            'image.*.max' => '画像ファイルは、20000KB以下のファイルを選択してください。',
             'address.required' => '住所は必須項目です。',
             'wifi.required' => 'ラジオボタン（Wi-Fi）は選択必須です。',
             'electrical_outlet.required' => 'ラジオボタン（コンセント）は選択必須です。',
