@@ -58,7 +58,7 @@ class UsersController extends Controller
             'user' => $user,
         ]);
     }
-    
+
     // お気に入りの取得 //
     public function favorites($id)
     {

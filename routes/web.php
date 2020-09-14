@@ -30,8 +30,8 @@ Route::group(['middleware' => ['auth']], function () {
     Route::resource('users', 'UsersController', ['only' => ['show', 'edit', 'update']]);
     Route::resource('cafes', 'CafesController', ['only' => ['create', 'store', 'edit', 'update']]);
     
-    // お気に入り一覧
     Route::group(['prefix' => 'users/{id}'], function() {
+        // お気に入り一覧
         Route::get('favorites', 'UsersController@favorites')->name('users.favorites');
     });
     
