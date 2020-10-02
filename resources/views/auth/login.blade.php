@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="text-center">
+    <div class="text-center mt-5 mb-5">
         <h1>ログイン</h1>
     </div>
 
@@ -20,10 +20,12 @@
                         {!! Form::password('password', ['class' => 'form-control']) !!}
                     </div>
     
-                    {!! Form::submit('ログイン', ['class' => 'btn btn-primary btn-block']) !!}
+                    {!! Form::submit('ログイン', ['class' => 'btn btn-success btn-block']) !!}
                 {!! Form::close() !!}
     
-                <p class="mt-2">{!! link_to_route('signup.get', 'アカウントをお持ちでない方はこちら') !!}</p>
+                <div class="text-center mt-5 mb-5">
+                    <p class="mt-2">{!! link_to_route('signup.get', 'アカウントをお持ちでない方はこちら') !!}</p>
+                </div>
             </div>
         </div>
     </div>

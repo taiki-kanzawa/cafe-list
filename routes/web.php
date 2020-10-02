@@ -13,6 +13,7 @@
 
 // トップページ
 Route::get('/', 'CafesController@index')->name('cafes.index');
+
 // カフェの詳細
 Route::get('cafe/{id}', 'CafesController@show')->name('cafes.show');
 

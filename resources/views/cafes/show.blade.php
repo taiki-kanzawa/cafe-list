@@ -44,22 +44,22 @@
         </div>
     </div>
     
-    
+    <!-- カフェの詳細 -->
     <div class="container details">
         <div class="row">
-            <div class="col-4">
+            <div class="col-4 text-center">
                 <p class="show-address">住所 :</p>
             </div>
             <div class="col-8">
                 <p class="show-address">{{ $cafe->address }}</p>
             </div>
         </div>
-        <div class="row">
-            <div class="col-4">
+        <div class="row facility">
+            <div class="col-4 text-center">
                 <p class="facility">設備 :</p>
             </div>
-            <div class="col-8">
-                <table class="table table-bordered">
+            <div class="col-6">
+                <table class="table table-bordered text-center">
                     <tr>
                         <th>Wi-Fi</th>
                         <td>{{ $cafe->wifi }}</td>
@@ -79,8 +79,8 @@
                 </table>
             </div>
         </div>
-        <div class="row">
-            <div class="col-4">
+        <div class="row meal-menu">
+            <div class="col-4 text-center">
                 <p class="meal-menu">食事メニュー :</p>
             </div>
             <div class="col-8">
@@ -93,15 +93,23 @@
         <span class="contributor">
             <p>投稿者 :</p>
         </span>
-        <span class="user-icon">
-            <img src="{{ Storage::disk('s3')->url($cafe->user->icon) }}" alt="{{ $cafe->user->icon }}">
+        <span class="contributor-icon">
+            @if (!empty($cafe->user->icon))
+                <img src="{{ Storage::disk('s3')->url($cafe->user->icon) }}" alt="{{ $cafe->user->icon }}">
+            @else
+                <div class="contributor-no-icon">No images</div>
+            @endif
         </span>
-        {!! link_to_route('users.show', $cafe->user->name, ['id' => $cafe->user->id]) !!}
+        <span class="contributor-name">
+            {!! link_to_route('users.show', $cafe->user->name, ['id' => $cafe->user->id]) !!}
+        </span>
     </div>
     
-    <div class="text-center">
-        @include('favorite.favorite_button', ['cafe' => $cafe])
-    </div>
+    @if (Auth::id() != $cafe->user_id)
+        <div class="text-center">
+            @include('favorite.favorite_button', ['cafe' => $cafe])
+        </div>
+    @endif
     
     <div class="text-center back-to-toppage">
         {!! link_to_route('cafes.index', 'トップページへ戻る') !!}

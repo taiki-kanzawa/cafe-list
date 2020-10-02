@@ -60,10 +60,17 @@ ol.carousel-indicators li {
 div.details {
     margin-top: 50px;
     border-top: 1px solid #dee2e6;
-    padding-top: 50px;
 }
 
 p.show-address {
+    margin-top: 50px;
+}
+
+div.facility {
+    margin-top: 50px;
+}
+
+div.meal-menu {
     margin-top: 50px;
 }
 
@@ -74,25 +81,44 @@ div.contributor-area {
     border-bottom: 1px solid #dee2e6;
     padding-top: 50px;
     padding-bottom: 50px;
+    text-align: center;
 }
 
 span.contributor {
     display: inline-block;
+    margin-right: 80px;
 }
 
-.user-icon {
-    width: 150px;
-    height: 150px;
+.contributor-icon {
+    width: 120px;
+    height: 120px;
     border-radius: 50%;
     margin: 10px auto;
 }
 
-.user-icon img {
-    width: 150px;
-    height: 150px;
+.contributor-icon img {
+    width: 120px;
+    height: 120px;
     border-radius: 50%;
 }
 
+div.contributor-no-icon {
+    display: inline-block;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background-color: gray;
+    color: white;
+    line-height: 120px;
+    margin: 10px auto;
+}
+
+span.contributor-name {
+    display: inline-block;
+    margin-left: 30px;
+}
+
 div.back-to-toppage {
+    margin-top: 50px;
     margin-bottom: 100px;
 }

@@ -1,19 +1,20 @@
-div .create-cafe {
+div.create-cafe {
     margin-bottom: 10px;
 }
 
-div .form-group {
+div.form-group {
     margin-bottom: 50px;
 }
 
-div .radio-btn {
+div.radio-btn {
     margin-bottom: 30px;
 }
 
-div .submit {
+div.submit {
+    margin-top: 30px;
     margin-bottom: 30px;
 }
 
-div .cancel {
+div.cancel {
     margin-bottom: 100px;
 }

@@ -54,9 +54,16 @@ class UsersController extends Controller
             $user->save();
         }
         
-        return view('users.show', [
+        $cafes = $user->cafes()->orderBy('created_at', 'desc')->paginate(5);
+        
+        $data = [
             'user' => $user,
-        ]);
+            'cafes' => $cafes,
+        ];
+        
+        $data += $this->counts($user);
+        
+        return view('users.show', $data);
     }
 
     // お気に入りの取得 //

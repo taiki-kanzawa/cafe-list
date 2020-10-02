@@ -3,28 +3,42 @@
 }
 
 .show-icon {
-    width: 150px;
-    height: 150px;
+    width: 180px;
+    height: 180px;
     border-radius: 50%;
     margin: 10px auto;
 }
 
 .show-icon img {
-    width: 150px;
-    height: 150px;
+    width: 180px;
+    height: 180px;
     border-radius: 50%;
 }
 
 .no-icon {
-    width: 150px;
-    height: 150px;
+    width: 180px;
+    height: 180px;
     border-radius: 50%;
-    background-color: gray;    /* 仮 */
-    color: white;    /* 仮 */
-    line-height: 150px;
+    background-color: gray;
+    color: white;
+    line-height: 180px;
     margin: 10px auto;
 }
 
 .show-name {
     font-size: 30px;
+}
+
+.show-content {
+    margin-top: 30px;
+    padding-top: 10px;
+    margin-bottom: 30px;
+}
+
+div.edit-link {
+    margin-top: 20px;
+}
+
+ul.nav-tabs {
+    margin-top: 30px;
 }

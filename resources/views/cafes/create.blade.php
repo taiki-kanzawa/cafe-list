@@ -9,7 +9,7 @@
         <div class="row create-cafe">
             {!! Form::open(['route' => 'cafes.store', 'class' => 'col-sm-12', 'files' => 'true', 'enctype' => 'multipart/form-data']) !!}
                 <div class="form-group row">
-                    <div class="col-sm-3 text-center">
+                    <div class="col-sm-2 offset-sm-1 text-center">
                         {!! Form::label('cafe_name', '店名 :') !!}
                     </div>
                     <div class="col-sm-7">
@@ -17,7 +17,7 @@
                     </div>
                 </div>
                 <div class="form-group row">
-                    <div class="col-sm-3 text-center">
+                    <div class="col-sm-2 offset-sm-1 text-center">
                         {!! Form::label('address', '住所 :') !!}
                     </div>
                     <div class="col-sm-7">
@@ -25,17 +25,17 @@
                     </div>
                 </div>
                 <div class="form-group row">
-                    <div class="col-sm-3 text-center">
+                    <div class="col-sm-2 offset-sm-1 text-center">
                         {!! Form::label('wifi electrical_outlet smoking_seat parking', '設備 :') !!}
                     </div>
-                    <div class="col-sm-7">
+                    <div class="col-sm-7 text-center">
                         
                         @include('cafes.radio_button')
                         
                     </div>
                 </div>
                 <div class="form-group row">
-                    <div class="col-sm-3 text-center">
+                    <div class="col-sm-3 offset-sm-1 text-center">
                         {!! Form::label('meal_menu', '食事メニュー :') !!}
                     </div>
                     <div class="col-sm-7">
@@ -43,15 +43,19 @@
                     </div>
                 </div>
                 <div class="form-group row">
-                    <div class="col-sm-3 text-center">
+                    <div class="col-sm-3 offset-sm-1 text-center">
                         {!! Form::label('image', '画像ファイル（複数可）:') !!}
                     </div>
                     <div class="col-sm-7">
                         {!! Form::file('image[]', ['multiple' => 'true']) !!}
                     </div>
                 </div>
-                <div class="text-center submit">
-                    {!! Form::submit('投稿', ['class' => 'btn btn-primary']) !!}
+                <div class="row">
+                    <div class="col-sm-6 offset-sm-3">
+                        <div class="text-center submit">
+                            {!! Form::submit('投稿', ['class' => 'btn btn-success btn-block']) !!}
+                        </div>
+                    </div>
                 </div>
             {!! Form::close() !!}
         </div>
