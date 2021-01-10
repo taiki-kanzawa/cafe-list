@@ -28,6 +28,7 @@ class UserTest extends LoginTest
         $response->assertStatus(200);
     }
     
+    // プロフィール編集のエラーテスト
     public function testUserEditError()
     {
         $this->testGetUserEdit();
@@ -41,7 +42,7 @@ class UserTest extends LoginTest
             'name' => ''
         ]);
         
-        // エラーによるメッセージが表示されているか確認
+        // エラーメッセージが表示されているか確認
         $response = $this->get('/users/8/edit');
         $response->assertSee('画像ファイルを選択してください。')
                  ->assertSee('画像ファイルの拡張子の内、jpeg,png,jpg,svgのいずれかを選択してください。')
@@ -57,12 +58,13 @@ class UserTest extends LoginTest
             'content' => $content
         ]);
         
-        // エラーによるメッセージが表示されているか確認
+        // エラーメッセージが表示されているか確認
         $response = $this->get('/users/8/edit');
         $response->assertSee('ユーザー名を35文字以内で入力してください。')
                  ->assertSee('自己紹介欄は191文字以内で入力してください。');
     }
     
+    // プロフィールの編集テスト
     public function testUserEdit()
     {
         $this->testGetUserEdit();
