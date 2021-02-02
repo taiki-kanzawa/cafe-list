@@ -28,4 +28,5 @@ https://example.cafe-list-app.com/
 - Webサーバー : Apache2.4
 - DB : MySQL5.7
 - AWS : EC2(Amazon Linux 2),RDS,S3,Route53,ELB
-- ![AWS構成図](https://user-images.githubusercontent.com/57515432/106544307-a5e27880-654a-11eb-9183-1985e25d5c79.jpg)
+
+![AWS構成図](https://user-images.githubusercontent.com/57515432/106544307-a5e27880-654a-11eb-9183-1985e25d5c79.jpg)
