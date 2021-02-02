@@ -27,4 +27,4 @@ https://example.cafe-list-app.com/
 ##  :coffee: 本番環境
 - Webサーバー : Apache2.4
 - DB : MySQL5.7
-- AWS : EC2(Amazon Linux 2),RDS,Route53
+- AWS : EC2(Amazon Linux 2),RDS,S3,Route53,ELB
