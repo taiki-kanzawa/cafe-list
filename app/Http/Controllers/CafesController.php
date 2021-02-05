@@ -9,12 +9,22 @@ use App\Http\Requests\CafesRequest;
 
 class CafesController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        $cafes = Cafe::orderBy('created_at', 'desc')->paginate(5);
+        $keyword = $request->input('keyword');
+        
+        if (!empty($keyword)) {
+            $cafes = Cafe::where('cafe_name', 'like', '%'.$keyword.'%')
+                         ->orWhere('address', 'like', '%'.$keyword.'%')
+                         ->orderBy('created_at', 'desc')
+                         ->paginate(5);
+        }
+        else {
+            $cafes = Cafe::orderBy('created_at', 'desc')->paginate(5);
+        }
         
         return view('welcome', [
-            'cafes' => $cafes,
+            'cafes' => $cafes
         ]);
     }
     

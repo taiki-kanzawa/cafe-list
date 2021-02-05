@@ -8,6 +8,16 @@
             <h1>一覧</h1>
         </div>
         
+        <!-- 検索フォーム -->
+        <div class="form-group text-center mt-5 mb-5">
+            {!! Form::open(['route' => 'cafes.index', 'method' => 'get', 'class' => 'input-group']) !!}
+                {!! Form::text('keyword', old('keyword'), ['class' => 'form-control search-from']) !!}
+                <div class="input-group-append">
+                    {!! Form::submit('検索', ['class' => 'btn btn-success']) !!}
+                </div>
+            {!! Form::close() !!}
+        </div>
+        
         <!-- カフェを投稿するためのボタン -->
         <div class="text-center mb-5 pb-5 border-bottom">
             @if (Auth::check())
@@ -36,6 +46,10 @@
             
             <div class="pagination">
                 {{ $cafes->links('pagination::bootstrap-4') }}
+            </div>
+        @else
+            <div class="text-center">
+                <p class="search-not-found">検索条件に一致するカフェが見つかりませんでした</p>
             </div>
         @endif
         
