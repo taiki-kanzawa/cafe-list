@@ -31,12 +31,13 @@
         @if (count($cafes) > 0)
             @foreach ($cafes as $cafe)
                 <div class="row mb-5 pb-5 border-bottom">
-                    <div class="col-md-6 image-area">
+                    <div class="col-lg-6 image-area">
                         <img src="{{ Storage::disk('s3')->url($cafe->first_image()->image) }}" alt="{{ $cafe->first_image()->image }}" class="image">
                     </div>
-                    <div class="text-center col-md-6 cafe-info">
+                    <div class="text-center col-lg-6 cafe-info">
                         {!! link_to_route('cafes.show', $cafe->cafe_name, ['id' => $cafe->id]) !!}
                         <p class="address">{{ $cafe->address }}</p>
+                        @include('cafes.facility', ['cafe' => $cafe])
                         @if (Auth::id() != $cafe->user_id)
                             @include('favorite.favorite_button', ['cafe' => $cafe])
                         @endif

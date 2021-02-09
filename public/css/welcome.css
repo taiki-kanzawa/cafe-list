@@ -3,14 +3,50 @@ form.input-group {
     margin: 15px auto;
 }
 
-img {
-    width: 500px;
-    height: 300px;
+div.image-area {
+    text-align: center;
 }
 
-img.image {
-    width: 500px;
-    height: 300px;
+@media (min-width: 300px) {
+    img {
+        width: 280px;
+        height: 180px;
+    }
+}
+
+@media (min-width: 400px) {
+    img {
+        width: 350px;
+        height: 250px;
+    }
+}
+
+@media (min-width: 768px) {
+    img {
+        width: 500px;
+        height: 300px;
+    }
+}
+
+@media (min-width: 300px) {
+    img.image {
+        width: 280px;
+        height: 180px;
+    }
+}
+
+@media (min-width: 400px) {
+    img.image {
+        width: 350px;
+        height: 250px;
+    }
+}
+
+@media (min-width: 768px) {
+    img.image {
+        width: 500px;
+        height: 300px;
+    }
 }
 
 div.cafe-info {
@@ -19,7 +55,7 @@ div.cafe-info {
 }
 
 p.address {
-    margin-top: 60px;
+    margin-top: 30px;
 }
 
 div.pagination {

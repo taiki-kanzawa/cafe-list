@@ -1,6 +1,8 @@
 @charset "UTF-8";
 @import url("./cafe_create.css");
 @import url("./cafe_show.css");
+@import url("./facility.css");
+@import url("./favorite_button.css");
 @import url("./user_show.css");
 @import url("./welcome.css");
 

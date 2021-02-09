@@ -61,19 +61,39 @@
             <div class="col-6">
                 <table class="table table-bordered text-center">
                     <tr>
-                        <th>Wi-Fi</th>
+                        <th>
+                            <span class="bg-info text-white facility">
+                                <i class="fas fa-wifi"></i>
+                            </span>
+                            Wi-Fi
+                        </th>
                         <td>{{ $cafe->wifi }}</td>
                     </tr>
                     <tr>
-                        <th>コンセント</th>
+                        <th>
+                            <span class="bg-warning text-white facility">
+                                <i class="fas fa-plug"></i>
+                            </span>
+                            コンセント
+                        </th>
                         <td>{{ $cafe->electrical_outlet }}</td>
                     </tr>
                     <tr>
-                        <th>喫煙席</th>
+                        <th>
+                            <span class="bg-success text-white facility">
+                                <i class="fas fa-smoking"></i>
+                            </span>
+                            喫煙席
+                        </th>
                         <td>{{ $cafe->smoking_seat }}</td>
                     </tr>
                     <tr>
-                        <th>駐車場</th>
+                        <th>
+                            <span class="bg-primary text-white facility">
+                                <i class="fas fa-parking"></i>
+                            </span>
+                            駐車場
+                        </th>
                         <td>{{ $cafe->parking }}</td>
                     </tr>
                 </table>

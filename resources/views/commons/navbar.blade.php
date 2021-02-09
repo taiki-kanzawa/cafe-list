@@ -1,5 +1,5 @@
 <header class="mb-4">
-    <nav class="navbar navbar-expand navbar-dark" style="background-color:#7b5544">
+    <nav class="navbar navbar-expand navbar-dark bg-dark">
         <div class="container">
             <a class="navbar-brand" href="/">Cafelist</a>
             <div class="navbar-nav mr-auto"></div>
